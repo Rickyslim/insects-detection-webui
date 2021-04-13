@@ -15,3 +15,9 @@ export function transactionList(query) {
     params: query
   })
 }
+// export function transactionList() {
+//   return request({
+//     url: '/mock_data/transaction.json',
+//     method: 'get'
+//   })
+// }

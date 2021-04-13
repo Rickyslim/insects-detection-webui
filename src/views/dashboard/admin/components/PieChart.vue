@@ -20,7 +20,7 @@ export default {
     },
     height: {
       type: String,
-      default: '300px'
+      default: '335px'
     }
   },
   data() {
@@ -52,21 +52,21 @@ export default {
         legend: {
           left: 'center',
           bottom: '10',
-          data: ['Industries', 'Technology', 'Forex', 'Gold', 'Forecasts']
+          data: ['粉虱成虫', '粉虱幼虫', '蓟马成虫', '蓟马幼虫', '其他']
         },
         series: [
           {
-            name: 'WEEKLY WRITE ARTICLES',
+            name: '单位:k',
             type: 'pie',
             roseType: 'radius',
             radius: [15, 95],
             center: ['50%', '38%'],
             data: [
-              { value: 320, name: 'Industries' },
-              { value: 240, name: 'Technology' },
-              { value: 149, name: 'Forex' },
-              { value: 100, name: 'Gold' },
-              { value: 59, name: 'Forecasts' }
+              { value: 140, name: '粉虱成虫' },
+              { value: 70, name: '粉虱幼虫' },
+              { value: 90, name: '蓟马成虫' },
+              { value: 50, name: '蓟马幼虫' },
+              { value: 10, name: '其他' }
             ],
             animationEasing: 'cubicInOut',
             animationDuration: 2600

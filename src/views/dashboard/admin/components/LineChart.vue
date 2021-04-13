@@ -64,7 +64,7 @@ export default {
     setOptions({ expectedData, actualData } = {}) {
       this.chart.setOption({
         xAxis: {
-          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          data: ['10月', '11月', '12月', '1月', '2月', '3月', '4月'],
           boundaryGap: false,
           axisTick: {
             show: false
@@ -90,10 +90,10 @@ export default {
           }
         },
         legend: {
-          data: ['expected', 'actual']
+          data: ['预测虫量', '实际虫量']
         },
         series: [{
-          name: 'expected', itemStyle: {
+          name: '预测虫量', itemStyle: {
             normal: {
               color: '#FF005A',
               lineStyle: {
@@ -109,7 +109,7 @@ export default {
           animationEasing: 'cubicInOut'
         },
         {
-          name: 'actual',
+          name: '实际虫量',
           smooth: true,
           type: 'line',
           itemStyle: {

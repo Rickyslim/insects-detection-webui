@@ -22,7 +22,7 @@ export default {
     },
     height: {
       type: String,
-      default: '300px'
+      default: '450px'
     }
   },
   data() {
@@ -68,18 +68,18 @@ export default {
             }
           },
           indicator: [
-            { name: 'Sales', max: 10000 },
-            { name: 'Administration', max: 20000 },
-            { name: 'Information Technology', max: 20000 },
-            { name: 'Customer Support', max: 20000 },
-            { name: 'Development', max: 20000 },
-            { name: 'Marketing', max: 20000 }
+            { name: '成虫规模', max: 10000 },
+            { name: '幼虫规模', max: 20000 },
+            { name: '棚区虫口密度', max: 20000 },
+            { name: '当前用药', max: 20000 },
+            { name: '爆发概率', max: 20000 },
+            { name: '作物单株虫口密度', max: 20000 }
           ]
         },
         legend: {
           left: 'center',
           bottom: '10',
-          data: ['Allocated Budget', 'Expected Spending', 'Actual Spending']
+          data: ['粉虱', '蓟马', '综合']
         },
         series: [{
           type: 'radar',
@@ -96,15 +96,15 @@ export default {
           data: [
             {
               value: [5000, 7000, 12000, 11000, 15000, 14000],
-              name: 'Allocated Budget'
+              name: '粉虱'
             },
             {
               value: [4000, 9000, 15000, 15000, 13000, 11000],
-              name: 'Expected Spending'
+              name: '蓟马'
             },
             {
               value: [5500, 11000, 12000, 15000, 12000, 12000],
-              name: 'Actual Spending'
+              name: '综合'
             }
           ],
           animationDuration: animationDuration

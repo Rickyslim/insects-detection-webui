@@ -3,52 +3,52 @@
     <el-col :xs="12" :sm="12" :lg="6" class="card-panel-col">
       <div class="card-panel" @click="handleSetLineChartData('newVisitis')">
         <div class="card-panel-icon-wrapper icon-people">
-          <svg-icon icon-class="peoples" class-name="card-panel-icon" />
+          <svg-icon icon-class="kunchong" class-name="card-panel-icon" />
         </div>
         <div class="card-panel-description">
           <div class="card-panel-text">
-            New Visits
+            {{ insects_category_1.name}}
           </div>
-          <count-to :start-val="0" :end-val="102400" :duration="2600" class="card-panel-num" />
+          <count-to :start-val="0" :end-val="199093" :duration="2600" class="card-panel-num" />
         </div>
       </div>
     </el-col>
     <el-col :xs="12" :sm="12" :lg="6" class="card-panel-col">
       <div class="card-panel" @click="handleSetLineChartData('messages')">
         <div class="card-panel-icon-wrapper icon-message">
-          <svg-icon icon-class="message" class-name="card-panel-icon" />
+          <svg-icon icon-class="kunchong_1" class-name="card-panel-icon" />
         </div>
         <div class="card-panel-description">
           <div class="card-panel-text">
-            Messages
+            {{insects_category_2.name}}
           </div>
-          <count-to :start-val="0" :end-val="81212" :duration="3000" class="card-panel-num" />
+          <count-to :start-val="0" :end-val="152322" :duration="3000" class="card-panel-num" />
         </div>
       </div>
     </el-col>
     <el-col :xs="12" :sm="12" :lg="6" class="card-panel-col">
       <div class="card-panel" @click="handleSetLineChartData('purchases')">
         <div class="card-panel-icon-wrapper icon-money">
-          <svg-icon icon-class="money" class-name="card-panel-icon" />
+          <svg-icon icon-class="bug" class-name="card-panel-icon" />
         </div>
         <div class="card-panel-description">
           <div class="card-panel-text">
-            Purchases
+            {{current_insects_total.name}}
           </div>
-          <count-to :start-val="0" :end-val="9280" :duration="3200" class="card-panel-num" />
+          <count-to :start-val="0" :end-val="current_insects_total.current_total" :duration="3200" class="card-panel-num" />
         </div>
       </div>
     </el-col>
     <el-col :xs="12" :sm="12" :lg="6" class="card-panel-col">
       <div class="card-panel" @click="handleSetLineChartData('shoppings')">
         <div class="card-panel-icon-wrapper icon-shopping">
-          <svg-icon icon-class="shopping" class-name="card-panel-icon" />
+          <svg-icon icon-class="chart" class-name="card-panel-icon" />
         </div>
         <div class="card-panel-description">
           <div class="card-panel-text">
-            Shoppings
+            {{predict_insects_total.name}}
           </div>
-          <count-to :start-val="0" :end-val="13600" :duration="3600" class="card-panel-num" />
+          <count-to :start-val="0" :end-val="predict_insects_total.predict_total" :duration="3600" class="card-panel-num" />
         </div>
       </div>
     </el-col>
@@ -57,8 +57,25 @@
 
 <script>
 import CountTo from 'vue-count-to'
-
 export default {
+  data() {
+    return {
+      insects_category_1: {
+        name: '粉虱'
+      },
+      insects_category_2: {
+        name: '蓟马'
+      },
+      current_insects_total: {
+        name: '当前总量',
+        current_total: 351415
+      },
+      predict_insects_total: {
+        name: '预测峰值',
+        predict_total: 37362
+      }
+    }
+  },
   components: {
     CountTo
   },
@@ -158,6 +175,11 @@ export default {
       }
     }
   }
+}
+.heatmap{
+  position: absolute;
+  left: 0px;
+  right: 0px;
 }
 
 @media (max-width:550px) {
