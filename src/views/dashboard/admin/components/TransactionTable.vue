@@ -2,12 +2,12 @@
   <el-table :data="list" style="width: 100%;padding-top: 15px;">
     <el-table-column label="消息" min-width="200">
       <template slot-scope="scope">
-        {{scope.row.name}}
+        {{ scope.row.name }}
       </template>
     </el-table-column>
     <el-table-column label="日期" width="195" align="center">
       <template slot-scope="scope">
-        {{ scope.row.date}}
+        {{ scope.row.date }}
       </template>
     </el-table-column>
     <el-table-column label="级别" width="100" align="center">
@@ -48,7 +48,7 @@ export default {
   methods: {
     fetchData() {
       transactionList().then(response => {
-        console.log(response)
+        // console.log(response)
         this.list = response.data.transactions
       })
     }

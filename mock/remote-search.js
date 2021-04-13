@@ -37,7 +37,7 @@ module.exports = [
         code: 20000,
         data: {
           total: 5,
-          'transactions': [
+          transactions: [
             {
               'name': '当前虫口密度达到35，请及时降温或用药！',
               'date': '2021-03-06',

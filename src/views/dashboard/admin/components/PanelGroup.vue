@@ -7,7 +7,7 @@
         </div>
         <div class="card-panel-description">
           <div class="card-panel-text">
-            {{ insects_category_1.name}}
+            {{ insects_category_1.name }}
           </div>
           <count-to :start-val="0" :end-val="199093" :duration="2600" class="card-panel-num" />
         </div>
@@ -20,7 +20,7 @@
         </div>
         <div class="card-panel-description">
           <div class="card-panel-text">
-            {{insects_category_2.name}}
+            {{ insects_category_2.name }}
           </div>
           <count-to :start-val="0" :end-val="152322" :duration="3000" class="card-panel-num" />
         </div>
@@ -33,7 +33,7 @@
         </div>
         <div class="card-panel-description">
           <div class="card-panel-text">
-            {{current_insects_total.name}}
+            {{ current_insects_total.name }}
           </div>
           <count-to :start-val="0" :end-val="current_insects_total.current_total" :duration="3200" class="card-panel-num" />
         </div>
@@ -46,7 +46,7 @@
         </div>
         <div class="card-panel-description">
           <div class="card-panel-text">
-            {{predict_insects_total.name}}
+            {{ predict_insects_total.name }}
           </div>
           <count-to :start-val="0" :end-val="predict_insects_total.predict_total" :duration="3600" class="card-panel-num" />
         </div>
@@ -58,6 +58,9 @@
 <script>
 import CountTo from 'vue-count-to'
 export default {
+  components: {
+    CountTo
+  },
   data() {
     return {
       insects_category_1: {
@@ -75,9 +78,6 @@ export default {
         predict_total: 37362
       }
     }
-  },
-  components: {
-    CountTo
   },
   methods: {
     handleSetLineChartData(type) {

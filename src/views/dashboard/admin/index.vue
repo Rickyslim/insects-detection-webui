@@ -10,10 +10,10 @@
     <el-row :gutter="32">
       <el-col :span="14">
         <div class="chart-wrapper">
-        <Heatmap/>
+          <Heatmap ref="heatmap"></Heatmap>
         </div>
       </el-col>
-      <el-col :span="10" >
+      <el-col :span="10">
         <div class="chart-wrapper">
           <span>虫群规模统计</span>
           <raddar-chart />
@@ -29,25 +29,25 @@
           <pie-chart />
         </div>
       </el-col>
-<!--      <el-col :xs="{span: 24}" :sm="{span: 12}" :md="{span: 12}" :lg="{span: 6}" :xl="{span: 6}" style="margin-bottom:30px;">-->
-<!--        <todo-list />-->
-<!--      </el-col>-->
-<!--      <el-col :xs="{span: 24}" :sm="{span: 12}" :md="{span: 12}" :lg="{span: 6}" :xl="{span: 6}" style="margin-bottom:30px;">-->
-<!--        <box-card />-->
-<!--      </el-col>-->
+      <!--      <el-col :xs="{span: 24}" :sm="{span: 12}" :md="{span: 12}" :lg="{span: 6}" :xl="{span: 6}" style="margin-bottom:30px;">-->
+      <!--        <todo-list />-->
+      <!--      </el-col>-->
+      <!--      <el-col :xs="{span: 24}" :sm="{span: 12}" :md="{span: 12}" :lg="{span: 6}" :xl="{span: 6}" style="margin-bottom:30px;">-->
+      <!--        <box-card />-->
+      <!--      </el-col>-->
     </el-row>
-<!--    <el-row :gutter="32">-->
-<!--      <el-col :xs="24" :sm="24" :lg="8">-->
-<!--        <div class="chart-wrapper">-->
-<!--          <pie-chart />-->
-<!--        </div>-->
-<!--      </el-col>-->
-<!--      <el-col :xs="24" :sm="24" :lg="8">-->
-<!--        <div class="chart-wrapper">-->
-<!--          <bar-chart />-->
-<!--        </div>-->
-<!--      </el-col>-->
-<!--    </el-row>-->
+    <!--    <el-row :gutter="32">-->
+    <!--      <el-col :xs="24" :sm="24" :lg="8">-->
+    <!--        <div class="chart-wrapper">-->
+    <!--          <pie-chart />-->
+    <!--        </div>-->
+    <!--      </el-col>-->
+    <!--      <el-col :xs="24" :sm="24" :lg="8">-->
+    <!--        <div class="chart-wrapper">-->
+    <!--          <bar-chart />-->
+    <!--        </div>-->
+    <!--      </el-col>-->
+    <!--    </el-row>-->
   </div>
 </template>
 
@@ -57,10 +57,10 @@ import PanelGroup from './components/PanelGroup'
 import LineChart from './components/LineChart'
 import RaddarChart from './components/RaddarChart'
 import PieChart from './components/PieChart'
-import BarChart from './components/BarChart'
+// import BarChart from './components/BarChart'
 import TransactionTable from './components/TransactionTable'
-import TodoList from './components/TodoList'
-import BoxCard from './components/BoxCard'
+// import TodoList from './components/TodoList'
+// import BoxCard from './components/BoxCard'
 import Heatmap from '@/views/dashboard/admin/components/Heatmap'
 
 const lineChartData = {
@@ -91,10 +91,10 @@ export default {
     LineChart,
     RaddarChart,
     PieChart,
-    BarChart,
-    TransactionTable,
-    TodoList,
-    BoxCard
+    // BarChart,
+    TransactionTable
+    // TodoList,
+    // BoxCard
   },
   data() {
     return {
@@ -104,6 +104,9 @@ export default {
   methods: {
     handleSetLineChartData(type) {
       this.lineChartData = lineChartData[type]
+      var map = document.getElementById('heatmap')
+      map.removeChild(map.childNodes[1])
+      this.$refs.heatmap.repaint_heatmap()
     }
   }
 }
