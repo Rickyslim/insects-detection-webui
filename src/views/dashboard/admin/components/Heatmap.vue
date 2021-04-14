@@ -1,6 +1,6 @@
 <template>
   <div id="heatmap" style="width:100%; height: 466px;">
-    <img src="../../../../assets/images/farm.png" style="width:100%; height: 100%">
+    <img src="../../../../assets/images/farm.jpg" style="width:100%; height: 100%">
   </div>
 </template>
 
@@ -17,18 +17,22 @@ export default {
     // 构建一些随机数据点,网页切图价格这里替换成你的业务数据
     var points = []
     var max = 0
-    var width = document.getElementById('heatmap').clientWidth
-    var height = document.getElementById('heatmap').clientHeight
-    var len = 50
+    var width = document.getElementById('heatmap').clientWidth * 0.7
+    var height = document.getElementById('heatmap').clientHeight * 0.8
+    var len = 100
     while (len--) {
       var val = Math.floor(Math.random() * 100)
       max = Math.max(max, val)
       var point = {
-        x: Math.floor(Math.random() * width),
-        y: Math.floor(Math.random() * height),
+        x: Math.floor(Math.random() * width) + 150,
+        y: Math.floor(Math.random() * height) + 50,
         value: val
       }
-      points.push(point)
+      if (point.x > 150 && point.x < 400 || point.x > 600 && point.x < 900) {
+        if (point.y > 30 && point.y < 120 || point.y > 200 && point.y < 260 || point.y > 350 && point.y < 400) {
+          points.push(point)
+        }
+      }
     }
     var data = {
       max: max,
@@ -45,18 +49,22 @@ export default {
       // 构建一些随机数据点,网页切图价格这里替换成你的业务数据
       var points = []
       var max = 0
-      var width = document.getElementById('heatmap').clientWidth
-      var height = document.getElementById('heatmap').clientHeight
-      var len = 50
+      var width = document.getElementById('heatmap').clientWidth * 0.7
+      var height = document.getElementById('heatmap').clientHeight * 0.8
+      var len = 100
       while (len--) {
         var val = Math.floor(Math.random() * 100)
         max = Math.max(max, val)
         var point = {
-          x: Math.floor(Math.random() * width),
-          y: Math.floor(Math.random() * height),
+          x: Math.floor(Math.random() * width) + 150,
+          y: Math.floor(Math.random() * height) + 50,
           value: val
         }
-        points.push(point)
+        if (point.x > 150 && point.x < 400 || point.x > 600 && point.x < 900) {
+          if (point.y > 30 && point.y < 120 || point.y > 200 && point.y < 260 || point.y > 350 && point.y < 400) {
+            points.push(point)
+          }
+        }
       }
       var data = {
         max: max,
