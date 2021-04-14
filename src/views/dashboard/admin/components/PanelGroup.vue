@@ -74,7 +74,7 @@ export default {
         current_total: 351415
       },
       predict_insects_total: {
-        name: '预测峰值',
+        name: '用药变化',
         predict_total: 37362
       }
     }
